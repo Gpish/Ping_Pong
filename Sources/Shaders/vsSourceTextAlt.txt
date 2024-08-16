@@ -1,0 +1,18 @@
+#version 330 core
+
+// POSITION and COLOR data sent for each vertex
+layout(location = 0) in vec2 pos;     // default constr for vec4 is applied which is (0, 0, 0, 1)
+layout(location = 1) in vec3 col;
+
+//out vec3 colr;
+uniform mat4 transformation;
+//uniform float first;
+
+void main() 
+{
+    gl_Position = transformation * vec4(pos, 0.0F, 1.0F);      // default constr for vec4 is applied
+    //if(first == 1.0F) colr = vec3(1.0F, 1.0F, 1.0F);
+    //else colr = col;
+    //colr = col;
+}
+

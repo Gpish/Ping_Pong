@@ -1,0 +1,23 @@
+#version 330 core
+
+// POSITION and COLOR data sent for each vertex
+layout(location = 0) in vec2 pos;     // default constr for vec4 is applied which is (0, 0, 0, 1)
+layout(location = 1) in vec3 col;
+
+out vec3 colr;
+//uniform mat4 translation;
+
+
+void main() 
+{
+    
+    //vec2 finalPos = translation * vec4(pos, 0.0F, 1.0F);
+    
+    //mat2 toNDC(2.0F / 800.0F, 0.0F, 0.0F, 2.0F / 600.0F);
+    //finalPos = toNDC * finalPos;
+    //finalPos.xy -= 1.0F;
+
+    gl_Position = vec4(pos, 0.0f, 1.0f);      // default constr for vec4 is applied
+    colr = col;
+}
+
